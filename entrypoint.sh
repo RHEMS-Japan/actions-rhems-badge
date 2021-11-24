@@ -1,6 +1,8 @@
 #!/bin/sh -l
 #### made by rayman@rhems-japan.co.jp
 
+echo "${INPUT_API}"
+env
 curl -X POST -H "Content-Type: application/json" \
              https://badges.rhems-japan.com/api-update-badge \
              -d @- <<EOS
