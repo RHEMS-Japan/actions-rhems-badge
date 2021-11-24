@@ -14,10 +14,7 @@ echo "STATUS :" ${INPUT_STATUS}
 echo "APP :" ${INPUT_APP}
 
 # env
-
-curl -X POST -H "Content-Type: application/json" \
-             https://badges.rhems-japan.com/api-update-badge \
-             -d @- <<EOS
+cat << EOF
 {
   "api_token": ${INPUT_API-TOKEN},
   "organization": ${GITHUB_REPOSITORY_OWNER},
@@ -27,7 +24,21 @@ curl -X POST -H "Content-Type: application/json" \
   "status":${INPUT_STATUS},
   "update": $(date "+%Y-%m-%d-%H:%M:%S")
 }
-EOS
+EOF
+
+# curl -X POST -H "Content-Type: application/json" \
+#              https://badges.rhems-japan.com/api-update-badge \
+#              -d @- <<EOS
+# {
+#   "api_token": ${INPUT_API-TOKEN},
+#   "organization": ${GITHUB_REPOSITORY_OWNER},
+#   "repo": $(echo $GITHUB_REPOSITORY | rev | cut -d '/' -f 1 | rev),
+#   "app": ${INPUT_APP},
+#   "branch": $GITHUB_REF_NAME
+#   "status":${INPUT_STATUS},
+#   "update": $(date "+%Y-%m-%d-%H:%M:%S")
+# }
+# EOS
 
 # curl -XPOST http://127.0.0.1:3000 \
 #   -H "Content-Type: application/json" \
