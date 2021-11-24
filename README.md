@@ -1,5 +1,7 @@
 # RHEMS BADGE action
 
+![badge](https://badges.rhems-japan.com/api-get-badge.svg?user_id=MSnzsZ4w1QdiqHL71hXoY7M77Mk2&organization=RHEMS-Japan&repo=badge&branch=release&app=badge)
+
 set up rhems badge action
 
 ## Inputs
