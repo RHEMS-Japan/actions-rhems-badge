@@ -17,4 +17,4 @@ jobs:
           app: 'github actions'
           status: true
           txt: '${{ steps.vars.outputs.tag }}'
-          color: red
+          color: pink
