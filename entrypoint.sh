@@ -4,6 +4,12 @@ echo "Hello $1"
 time=$(date)
 echo "::set-output name=time::$time"
 
-echo "ORG" : $INPUT_ORGANIZATION
-echo "BRANCH" $INPUT_BRANCH
-echo "REPO" $INPUT_REPO
+echo "ORG : "  $GITHUB_REPOSITORY_OWNER
+echo "BRANCH : " $GITHUB_REF
+echo "REPO : " $GITHUB_REPOSITORY
+
+echo "API-TOKEN :" ${INPUT_API-TOKEN}
+echo "STATUS :" ${INPUT_STATUS}
+echo "APP :" ${INPUT_APP}
+
+env
