@@ -1,6 +1,6 @@
-# Hello world docker action
+# RHEMS BADGE action
 
-このアクションは"Hello World"もしくは"Hello" + ログに挨拶する人物名を出力します。
+set up rhems badge action
 
 ## Inputs
 
