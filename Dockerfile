@@ -1,6 +1,7 @@
 # コードを実行するコンテナイメージ
 FROM alpine:3.10
 
+RUN apk add curl
 # アクションのリポジトリからコードファイルをコンテナのファイルシステムパス `/`にコピー
 COPY entrypoint.sh /entrypoint.sh
 
