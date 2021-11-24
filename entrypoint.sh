@@ -18,9 +18,9 @@ txt : ${_BRANCH} / ${INPUT_BRANCH}
 cat << EOF
   "txt": "${INPUT_TXT}",
 EOF`
-`[ -n "${COLOR_TXT}" ] && \
+`[ -n "${INPUT_COLOR}" ] && \
 cat << EOF
-  "color": "${COLOR_TXT}",
+  "color": "${INPUT_COLOR}",
 EOF`
   "update": "$(date "+%Y-%m-%d-%H:%M:%S")"
 }
@@ -41,9 +41,9 @@ curl -X POST -H "Content-Type: application/json" \
 cat << EOF
   "txt": "${INPUT_TXT}",
 EOF`
-`[ -n "${COLOR_TXT}" ] && \
+`[ -n "${INPUT_COLOR}" ] && \
 cat << EOF
-  "color": "${COLOR_TXT}",
+  "color": "${INPUT_COLOR}",
 EOF`
   "update": "$(date "+%Y-%m-%d-%H:%M:%S")"
 }
