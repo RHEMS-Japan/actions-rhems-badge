@@ -25,6 +25,10 @@ if branche is empty it will use ${GITHUB_REF_NAME}
 **optional**
 write txt for right side
 
+## `color`
+**optional**
+you can set color
+
 
 ## 使用例
 

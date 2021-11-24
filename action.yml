@@ -22,7 +22,10 @@ inputs:
   txt:
     description: 'add txt'
     required: false
-
+  color:
+    description: 'set color'
+    required: false
+    
 outputs:
   time: # id of output
     description: 'no needed'
@@ -35,3 +38,4 @@ runs:
     - ${{ inputs.app }}
     - ${{ inputs.txt }}
     - ${{ inputs.status }}
+    - ${{ inputs.color }}

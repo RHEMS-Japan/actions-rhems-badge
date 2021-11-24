@@ -37,6 +37,10 @@ curl -X POST -H "Content-Type: application/json" \
 cat << EOF
   "txt": "${INPUT_TXT}",
 EOF`
+`[ -n "${COLOR_TXT}" ] && \
+cat << EOF
+  "color": "${COLOR_TXT}",
+EOF`
   "update": "$(date "+%Y-%m-%d-%H:%M:%S")"
 }
 EOS
