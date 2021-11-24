@@ -10,6 +10,7 @@ curl -X POST -H "Content-Type: application/json" \
   "app": "${INPUT_APP}",
   "branch": "${GITHUB_REF_NAME}",
   "status": "${INPUT_STATUS}",
+  `[ -n "${INPUT_TXT}" ] && echo "\"txt\": \"${INPUT_TXT}\","`
   "update": "$(date "+%Y-%m-%d-%H:%M:%S")"
 }
 EOS
