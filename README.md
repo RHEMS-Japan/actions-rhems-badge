@@ -1,6 +1,7 @@
 # RHEMS BADGES action
 
 ![badge](https://badges.rhems-japan.com/api-get-badge.svg?user_id=MSnzsZ4w1QdiqHL71hXoY7M77Mk2&organization=RHEMS-Japan&repo=badge&branch=release&app=badge)
+![githubactions](https://badges.rhems-japan.com/api-get-badge.svg?user_id=MSnzsZ4w1QdiqHL71hXoY7M77Mk2&organization=RHEMS-Japan&repo=actions-rhems-badges&branch=release&app=github%20actions)
 
 set up rhems badge action
 
