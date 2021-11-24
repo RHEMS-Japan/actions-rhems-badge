@@ -10,7 +10,7 @@ jobs:
         id: vars
         run: echo ::set-output name=tag::${GITHUB_REF#refs/*/}
       - name: RHEMS BADGE
-        uses: RHEMS-Japan/actions-rhems-badge@v1.1.6p
+        uses: RHEMS-Japan/actions-rhems-badge@v1.1.6
         with:
           api_token: '${{ secrets.RHEMS_BADGE_TOKEN }}'
           branch: release
