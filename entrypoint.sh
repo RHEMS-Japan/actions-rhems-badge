@@ -1,7 +1,7 @@
 #!/bin/sh -l
 #### made by rayman@rhems-japan.co.jp
 echo "===="
-cat << EOF
+cat << EOS
 {
   "api_token": "${INPUT_API_TOKEN}",
   "organization": "${GITHUB_REPOSITORY_OWNER}",
@@ -9,10 +9,13 @@ cat << EOF
   "app": "${INPUT_APP}",
   "branch": "${GITHUB_REF_NAME}",
   "status": "${INPUT_STATUS}",
-  `[ -n "${INPUT_TXT}" ] && echo "\"txt\": \"${INPUT_TXT}\","`
+`[ -n "${INPUT_TXT}" ] && \
+cat << EOF
+  "txt": "${INPUT_TXT}",
+EOF`
   "update": "$(date "+%Y-%m-%d-%H:%M:%S")"
 }
-EOF
+EOS
 env
 echo "===="
 curl -X POST -H "Content-Type: application/json" \
@@ -25,7 +28,10 @@ curl -X POST -H "Content-Type: application/json" \
   "app": "${INPUT_APP}",
   "branch": "${GITHUB_REF_NAME}",
   "status": "${INPUT_STATUS}",
-  `[ -n "${INPUT_TXT}" ] && echo "\"txt\": \"${INPUT_TXT}\","`
+`[ -n "${INPUT_TXT}" ] && \
+cat << EOF
+  "txt": "${INPUT_TXT}",
+EOF`
   "update": "$(date "+%Y-%m-%d-%H:%M:%S")"
 }
 EOS
