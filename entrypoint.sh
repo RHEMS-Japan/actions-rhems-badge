@@ -1,5 +1,20 @@
 #!/bin/sh -l
 #### made by rayman@rhems-japan.co.jp
+echo "===="
+cat << EOF
+{
+  "api_token": "${INPUT_API_TOKEN}",
+  "organization": "${GITHUB_REPOSITORY_OWNER}",
+  "repo": "$(echo $GITHUB_REPOSITORY | rev | cut -d '/' -f 1 | rev)",
+  "app": "${INPUT_APP}",
+  "branch": "${GITHUB_REF_NAME}",
+  "status": "${INPUT_STATUS}",
+  `[ -n "${INPUT_TXT}" ] && echo "\"txt\": \"${INPUT_TXT}\","`
+  "update": "$(date "+%Y-%m-%d-%H:%M:%S")"
+}
+EOF
+env
+echo "===="
 curl -X POST -H "Content-Type: application/json" \
              https://badges.rhems-japan.com/api-update-badge \
              -d @- <<EOS
