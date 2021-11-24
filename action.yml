@@ -6,10 +6,17 @@ branding:
   icon: 'bell'
   color: 'red'
 inputs:
-  who-to-greet:  # id of input
-    description: 'Who to greet'
+  app:  
+    description: 'app name'
     required: true
-    default: 'World'
+  status:
+    description: 'get status'
+    required: true
+    default: 'true'
+  txt:
+    description: 'add txt'
+    required: false
+
 outputs:
   time: # id of output
     description: 'The time we greeted you'
@@ -17,7 +24,6 @@ runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
-    # - ${{ inputs.who-to-greet }}
     - ${{ inputs.app }}
     - ${{ inputs.txt }}
     - ${{ inputs.status }}

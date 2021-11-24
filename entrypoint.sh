@@ -4,6 +4,6 @@ echo "Hello $1"
 time=$(date)
 echo "::set-output name=time::$time"
 
-echo $INPUT_ORGANIZATION
-echo $INPUT_BRANCH
-echo $INPUT_REPO
+echo "ORG" : $INPUT_ORGANIZATION
+echo "BRANCH" $INPUT_BRANCH
+echo "REPO" $INPUT_REPO
