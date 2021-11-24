@@ -6,7 +6,10 @@ branding:
   icon: 'bell'
   color: 'red'
 inputs:
-  app:  
+  api-token:
+    description: 'app name'
+    required: true
+  app:
     description: 'app name'
     required: true
   status:
@@ -24,6 +27,7 @@ runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
+    - ${{ inputs.api-token }}
     - ${{ inputs.app }}
     - ${{ inputs.txt }}
     - ${{ inputs.status }}
