@@ -1,6 +1,10 @@
 # action.yml
 name: 'RHEMS BADGE'
 description: 'update rhems badge'
+author: 'RHEMS Japan'
+branding:
+  icon: 'bell'
+  color: 'red'
 inputs:
   who-to-greet:  # id of input
     description: 'Who to greet'
