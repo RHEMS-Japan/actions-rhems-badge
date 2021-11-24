@@ -15,6 +15,10 @@ https://badges.rhems-japan.com
 **Required**
 set status true or false
 
+## `branch`
+**optional**
+if branche is empty it will use ${GITHUB_REF_NAME}
+
 ## `txt`
 **optional**
 write txt for right side

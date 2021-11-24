@@ -6,6 +6,9 @@ branding:
   icon: 'bell'
   color: 'red'
 inputs:
+  branch:
+    description: 'default branch'
+    required: false
   api_token:
     description: 'api token'
     required: true
@@ -27,6 +30,7 @@ runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
+    - ${{ inputs.branch }}
     - ${{ inputs.api_token }}
     - ${{ inputs.app }}
     - ${{ inputs.txt }}

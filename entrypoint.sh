@@ -18,6 +18,10 @@
 # EOS
 # env
 # echo "===="
+
+_BRANCH=${GITHUB_REF_NAME}
+[ -n ${INPUT_BRANCH} ] && _BRANCH=${INPUT_BRANCH}
+
 curl -X POST -H "Content-Type: application/json" \
              https://badges.rhems-japan.com/api-update-badge \
              -d @- <<EOS
@@ -26,7 +30,7 @@ curl -X POST -H "Content-Type: application/json" \
   "organization": "${GITHUB_REPOSITORY_OWNER}",
   "repo": "$(echo $GITHUB_REPOSITORY | rev | cut -d '/' -f 1 | rev)",
   "app": "${INPUT_APP}",
-  "branch": "${GITHUB_REF_NAME}",
+  "branch": "${_BRANCH}",
   "status": "${INPUT_STATUS}",
 `[ -n "${INPUT_TXT}" ] && \
 cat << EOF
