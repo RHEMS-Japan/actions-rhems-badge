@@ -4,18 +4,28 @@ set up rhems badge action
 
 ## Inputs
 
-## `who-to-greet`
+## `api_token`
+**Required**
+set api token
+if you don't have any token get it from blow
 
-**Required** The name of the person to greet. デフォルトは `"World"`。
+https://badges.rhems-japan.com
 
-## Outputs
+## `status`
+**Required**
+set status true or false
 
-## `time`
+## `txt`
+**optional**
+write txt for right side
 
-The time we greeted you.
 
 ## 使用例
 
-uses: actions/hello-world-docker-action@v1
+```sh
+uses: RHEMS-Japan/actions-rhems-badge@v1
 with:
-  who-to-greet: 'Mona the Octocat'
+  api_token: '${{ secrets.RHEMS_BADGE_TOKEN }}'
+  app: 'badge'
+  status: true  #CI=true
+```
