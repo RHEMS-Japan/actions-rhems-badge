@@ -1,6 +1,6 @@
 # action.yml
-name: 'RHEMS BADGE'
-description: 'update rhems badge'
+name: 'RHEMS BADGES'
+description: 'update rhems badges'
 author: 'RHEMS Japan'
 branding:
   icon: 'bell'
