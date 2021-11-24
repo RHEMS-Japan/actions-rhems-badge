@@ -29,7 +29,7 @@ write txt for right side
 ## 使用例
 
 ```sh
-uses: RHEMS-Japan/actions-rhems-badge@v1
+uses: RHEMS-Japan/actions-rhems-badges@v**
 with:
   api_token: '${{ secrets.RHEMS_BADGE_TOKEN }}'
   app: 'badge'
